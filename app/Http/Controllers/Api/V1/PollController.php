@@ -8,6 +8,12 @@ use App\Models\Poll;
 
 class PollController extends Controller
 {
+    public function index()
+    {
+        $polls = Poll::whereNull('deleted_at')->get();
+        return $polls;
+    }
+    
     public function show($pollId)
     {
         $poll = Poll::findOrFail($pollId);
@@ -37,9 +43,11 @@ class PollController extends Controller
         $options = $request->get('options');
         foreach ($options as $option)
         {
-            $poll->options()->create([
-                'description' => $option
-            ]);
+            if (trim($option)) {
+                $poll->options()->create([
+                    'description' => trim($option)
+                ]);
+            }
         }
 
         return ['poll_id' => $poll->id];

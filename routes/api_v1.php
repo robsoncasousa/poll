@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('poll')->name('poll.')->group(function () {
     Route::get('/{id}', 'PollController@show')->name('show');
     Route::get('/{id}/stats', 'PollController@stats')->name('stats');
+    Route::get('/', 'PollController@index')->name('index');
     Route::post('/', 'PollController@store')->name('store');
     Route::post('/{id}/vote', 'PollController@vote')->name('vote');
 });
