@@ -13,7 +13,6 @@ Steps to install Poll project in your machine:
 - 1- Clone or download this repository
 - 2- Run "composer install"
 - 3- Create database
-- 4- Create the ".env" file and set the database informations
-    You can duplicate the ".env.example" file, rename to ".env" and just add the database information
+- 4- Create the ".env" file and set the database informations. You can duplicate the ".env.example" file, rename to ".env" and just add the database information
 - 5- Run "php artisan migrate"
 - 6- Start your server and access it!
