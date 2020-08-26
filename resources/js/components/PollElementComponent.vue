@@ -68,6 +68,9 @@
                 voted: false
             }
         },
+        mounted() {
+            this.getPoll(this.pollId);
+        },
         methods: {
             getPoll(id) {
                 axios.get('/api/v1/poll/' + id).then(response => {

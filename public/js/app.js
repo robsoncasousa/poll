@@ -2117,6 +2117,9 @@ __webpack_require__.r(__webpack_exports__);
       voted: false
     };
   },
+  mounted: function mounted() {
+    this.getPoll(this.pollId);
+  },
   methods: {
     getPoll: function getPoll(id) {
       var _this = this;
